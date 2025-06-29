@@ -1,0 +1,47 @@
+<div class="container d-flex flex-column justify-content-center align-items-center pb-4" style="font-family: 'Poppins', sans-serif;">
+
+  <div class="form-group d-flex flex-row align-items-center gap-2 my-4 flex-wrap justify-content-center">
+    <div class="d-flex flex-column align-items-start">
+      <label class="mb-1 fw-semibold">Budget?</label>
+      <input type="text" [formControl]="budget" class="form-control custom-input" />
+    </div>
+    <button (click)="getTrip(budget.value)" class="btn-3d mt-4">Go</button>
+  </div>
+
+  <google-map height="500px" width="88vw" [center]="center" [zoom]="zoom" class="map-container">
+    <map-directions-renderer *ngIf="directionsResults" [directions]="directionsResults"></map-directions-renderer>
+    <map-marker #marker="mapMarker" *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label" [title]="marker.title" [options]="marker.options"></map-marker>
+  </google-map>
+
+  <div *ngIf="itinerary" id="itinerary" class="mb-5">
+    <div *ngFor="let day of objectKeys(itinerary)" class="my-4">
+      <!-- <p class="fw-bold text-primary">Let's go to {{ itinerary[day]['morning'].city }}!</p> -->
+      <h4 class="fw-bold mb-3" style="color: #5c6bc0">Plan</h4>
+
+      <div class="d-flex flex-row flex-wrap gap-3 justify-content-center">
+
+        <button (click)="goToFlight()" class="btn-3d">
+          Flights starting from ${{ flight_lowest_price }}
+        </button>
+
+        <button class="btn-3d" (click)="getMarker(itinerary[day]['morning'].location)">
+          {{ itinerary[day]['morning'].location }} {{ itinerary[day]['morning'].cost }}
+        </button>
+
+        <button class="btn-3d" (click)="getMarker(itinerary[day]['afternoon'].location)">
+          {{ itinerary[day]['afternoon'].location }} {{ itinerary[day]['afternoon'].cost }}
+        </button>
+
+        <button class="btn-3d" (click)="getMarker(itinerary[day]['evening'].location)">
+          {{ itinerary[day]['evening'].location }} {{ itinerary[day]['evening'].cost }}
+        </button>
+
+        <button (click)="getMarker(hotel_coordinates)" class="btn-3d">
+          Hotels
+        </button>
+
+      </div>
+      <button class="btn-3d mt-3" (click)="save()">save</button>
+    </div>
+  </div>
+</div>

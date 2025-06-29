@@ -1,0 +1,73 @@
+.custom-input {
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease;
+  }
+  
+  .custom-input:focus {
+    outline: none;
+    border-color: #5c6bc0;
+    box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+  }
+  
+  .map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  #itinerary .btn-3d {
+    width: 15%;
+    min-width: 160px;
+  }
+  
+  #itinerary {
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  #itinerary .btn-3d {
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: 160px;
+    cursor: pointer;
+  }
+  
+  #itinerary .btn-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    opacity: 0.95;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .form-group {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 1rem;
+    }
+  
+    .custom-input {
+      width: 100% !important;
+    }
+  
+    .btn-3d {
+      width: 100%;
+    }
+  }
+  

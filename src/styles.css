@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+.btn-3d {
+    background-color: #5c6bc0; /* Slightly darker shade */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
+    min-width: 160px;
+    max-width: 240px;
+    text-align: center;
+    flex: 1 1 auto;
+    cursor: pointer;
+}
+
+.btn-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced hover effect */
+}
+
+.btn-3d:active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px); /* Slight movement to indicate press */
+}
